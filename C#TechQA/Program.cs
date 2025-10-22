@@ -1,27 +1,36 @@
-﻿internal class Program
+﻿
+internal class Program
 {
     private static void Main(string[] args)
     {
-        //Reverse String ::
-        Console.WriteLine("Enter a string to reverse:");
-
-        /*John  lenghth = 4-1 = 3
-         3 2 1 0
-         nhoJ
-         J o h n
-         0 1 2 3
-         
-         0 < 4
-         1 < 4
-         2 < 4
-         3 < 4
-         
-         i = 3; i >=0; i--
-            */
+        Console.WriteLine("Please Enater a Name ::");
         string input = Console.ReadLine();
-        for (int i = input.Length - 1; i >= 0; i--)
+
+        input = input.ToLower();
+        int left = 0;
+        int right = input.Length-1;
+        bool isPlaindrome = true;
+
+        while (left < right)
         {
-            Console.Write(input[i]);
+            if (input[left] != input[right])
+            {
+                isPlaindrome = false;
+                break;
+            }
+                left--;
+                right++;
         }
+
+        if (isPlaindrome)
+        {
+            Console.WriteLine("Given String is a Palindrome!!");
+        }
+        else
+        {
+            Console.WriteLine("Given String is not a Palindrome!!");
+        }
+
+        Console.WriteLine(input);
     }
 }
